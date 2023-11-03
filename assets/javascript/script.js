@@ -1,14 +1,16 @@
+// Get user inputs 
+// ********* Get HTML ID's later
+var mealSearch = 'Arrabiata'; 
+var mealIngrediantSearch = 'Beef'; 
 
-var mealSearch = 'Arrabiata'; // Get input from html
-var cocktailSearch = 'Margarita'; // Get input from html
+var cocktailSearch = 'Margarita'; 
+var cocktailIngrediantSearch = 'Whiskey'; 
 
-var mealIngrediantSearch = 'Beef'; // Get input from html
-var cocktailIngrediantSearch = 'Whiskey'; // Get input from html
-
+// Create URL Strings 
 var mealUrl = 'https:www.themealdb.com/api/json/v1/1/search.php?s=' + mealSearch; // the database of meals (later put input inside html link after '?s=')
-var cocktailUrl = 'https:www.thecocktaildb.com/api/json/v1/1/search.php?s=' + cocktailSearch; // the database of cocktails (later put input inside html link after '?s=')
-
 var mealIngrediantUrl= 'https:www.themealdb.com/api/json/v1/1/filter.php?i=' + mealIngrediantSearch;
+
+var cocktailUrl = 'https:www.thecocktaildb.com/api/json/v1/1/search.php?s=' + cocktailSearch; // the database of cocktails (later put input inside html link after '?s=')
 var cocktailIngrediantUrl = 'https:www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + cocktailIngrediantSearch; // Get input from html
 
 
@@ -20,10 +22,6 @@ function displayMeal(mealObject){ // when called html tags will be replaced with
 function displayCocktail(cocktailObject){ // when called html tags will be replaced with information from object 
     console.log(cocktailObject);
     return;
-}
-
-function searchIngrediants(){
-
 }
 
 // Meal Stuffs
