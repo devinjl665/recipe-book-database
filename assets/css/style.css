@@ -8,32 +8,54 @@
 
 /* Element Selectors */ 
 body {
-    font-family:    
-
-
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif 
 }
-
-{
-    background-color: ;
-    color: ;
-}
-
 
 /* Id Selectors */ 
 
 #welcome {
     text-align: center;
+    font-size: xx-large;
     background-color: #000;
     color: white;
     
 }
 
 #container {
-    width: 50%;
-    height: 300px;
-    margin: 100px;
+    display: inline-block;
+    width: 70%;
+    height: 400px;
+    margin-top: 50px;
+    margin-left: 100px;
     border: 2px solid #000;
 }
 
+#looking-for {
+    width: 20%;
+    height: 450px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    float: right;
+    border: 2px solid #000;
+}
+
+/* Class Selectors */
+.recommended-window {
+    padding: 20px;
+}
+
+.item-window {
+    width: 90%;
+    height: 100px;
+    border: 2px solid #000;
+
+}
+
+.search-block {
+    margin: 10%;
+    align-content: center;
+    border: 2px solid #000;
+}
 
 /* Media Queries */
