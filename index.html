@@ -8,24 +8,23 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <!--
-    <header>
-       <h1>Recipe Book</h1>
-    </header> -->
-    <nav>
-      <ul>
-        <li><a href="#welcome">Home</a></li>
-        <li> <a href="#food-recipes">Food Recipes</a></li>
-        <li> <a href="#cocktail-recipes">Cocktail Recipes</a></li>
-        <li><a href="#search">Search</a></li>
-      </ul>
-    </nav>
-    <main>
-      <!--Welcome Page-->
-      <section id="welcome">
-        <h2>Welcome to the Recipe Book!</h2>
-        
-        <!--This is for the search bar
+    
+  <!--Welcome Page-->
+    <header id="welcome">
+       <h1>Welcome to the Recipe Book!</h1>
+        <nav>
+          <ul>
+            <li><a href="#welcome">Home</a></li>
+            <li> <a href="#food-recipes">Food Recipes</a></li>
+            <li> <a href="#cocktail-recipes">Cocktail Recipes</a></li>
+            <li><a href="#search">Search</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+  <main>
+      
+      <!--This is for the search bar
         <div class="search-bar">
           <input type="text" id="search-input" placeholder="Search for recipes..." />
           <button id="search-button">Search</button>
@@ -35,13 +34,13 @@
       <!--Separated sections to be able to create box model from wireframe - Devin -->
       <section id="container">
         <div class="recommended-window">
-          <h3>Recommended Food Ideas</h3>
+          <h2>Recommended Food Ideas</h2>
           <!--Recommended food content goes here-->
           <div class="item-window"></div>
         </div>
         
         <div class="recommended-window">
-          <h3>Recommended Cocktail Ideas</h3>
+          <h2>Recommended Cocktail Ideas</h2>
           <!--Recommended cocktail content goes here-->
           <div class="item-window"></div>
         </div>
