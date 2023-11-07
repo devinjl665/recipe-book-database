@@ -37,6 +37,8 @@ body {
     margin-top: 20px;
     margin-right: 20px;
     float: right;
+    text-align: center;
+    background-color: gray;
     border: 2px solid #000;
 }
 
@@ -54,8 +56,9 @@ body {
 
 .search-block {
     margin: 10%;
-    align-content: center;
+    height: 150px;
+    background-color: #9c9da4;
     border: 2px solid #000;
-}
 
+}
 /* Media Queries */
