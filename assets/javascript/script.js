@@ -5,7 +5,7 @@ var recommendedCocktail = 'Old Fashioned'; // change accordinly to what you reco
 
 function displayRecommenedMeal(meal){ // takes in a meal
 
-  var mealUrl = 'https:www.themealdb.com/api/json/v1/1/search.php?s=' + meal; // the database of meals (later put input inside html link after '?s=')
+  var mealUrl = 'https:www.themealdb.com/api/json/v1/1/search.php?s=' + meal; // the database of meals 
 
   fetch(mealUrl) // send out request and fetch should return an object (the meal object)
     .then(function (response) {
