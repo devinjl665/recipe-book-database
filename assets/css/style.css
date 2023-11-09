@@ -13,14 +13,6 @@ body {
 
 /* Id Selectors */ 
 
-#welcome {
-    text-align: center;
-    font-size: xx-large;
-    background-color: #000;
-    color: white;
-    
-}
-
 #container {
     display: inline-block;
     width: 70%;
@@ -43,6 +35,13 @@ body {
 }
 
 /* Class Selectors */
+.navbar {
+    text-align: center;
+    font-size: xx-large;
+    background-color: #000;
+    color: white;
+}
+
 .recommended-window {
     padding: 20px;
 }
