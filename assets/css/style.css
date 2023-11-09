@@ -71,4 +71,13 @@ body {
     border-radius: 25px;
 }
 
+.recommendedText{
+    margin-top: 75px;
+    margin-left: 50px;
+    padding: 20px;
+    width: 95%;
+    text-align: left;
+    text-decoration: underline;
+    color: black;
+}
 /* Media Queries */
