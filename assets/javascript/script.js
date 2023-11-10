@@ -2,6 +2,9 @@
 // ********* Get HTML ID's later
 var recommendedMeal = 'Arrabiata'; // change accordinly to what you recommened
 var recommendedCocktail = 'Old Fashioned'; // change accordinly to what you recommened
+var searchForm = document.getElementById("searchForm"); // form for searches
+var mealSearchInput = document.getElementById("mealSearchInput");
+var cocktailSearchInput = document.getElementById("cocktailSearchInput");
 
 function displayRecommenedMeal(meal){ // takes in a meal
 
@@ -72,8 +75,6 @@ function displayRecommenedMeal(meal){ // takes in a meal
 
 function displayRecommenedCocktails(cocktail){ // takes in a cocktail
 
-  var display = document.getElementById("recommended-cocktail");
-
   var cocktailUrl = 'https:www.thecocktaildb.com/api/json/v1/1/search.php?s=' + cocktail; // the database of cocktails (later put input inside html link after '?s=')
 
   fetch(cocktailUrl) // send out request and fetch should return an object (the meal object)
@@ -140,45 +141,98 @@ function displayRecommenedCocktails(cocktail){ // takes in a cocktail
 displayRecommenedMeal(recommendedMeal);
 displayRecommenedCocktails(recommendedCocktail);
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Functions to open and close a modal
-  function openModal($el) {
-    $el.classList.add('is-active');
-  }
+//Search Inputs for websites
 
-  function closeModal($el) {
-    $el.classList.remove('is-active');
-  }
+//meals
+function findMeal(meal) {
 
-  function closeAllModals() {
-    (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-      closeModal($modal);
-    });
-  }
+  var mealUrl = 'https:www.themealdb.com/api/json/v1/1/search.php?s=' + meal;
 
-  // Add a click event on buttons to open a specific modal
-  (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-    const modal = $trigger.dataset.target;
-    const $target = document.getElementById(modal);
+  fetch(mealUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      if(data == "")
 
-    $trigger.addEventListener('click', () => {
-      openModal($target);
-    });
-  });
+      if(!document.getElementById("warningCheck")){ 
 
-  // Add a click event on various child elements to close the parent modal
-  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-    const $target = $close.closest('.modal');
-
-    $close.addEventListener('click', () => {
-      closeModal($target);
-    });
-  });
-
-  // Add a keyboard event to close all modals
-  document.addEventListener('keydown', (event) => {
-    if (event.code === 'Escape') {
-      closeAllModals();
+        var warning = document.createElement("p");
+        warning.id = "warningCheck";
+        warning.textContent = "Food not found. Please try again."
+        warning.classList.add("alert");
+        warning.classList.add("alert-danger");
+        warning.style.marginTop = "10px";
+        searchForm.appendChild(warning);
     }
-  });
-});
+
+  })
+  else {
+      if(document.getElementById("warningCheck")) {
+          var warning = document.getElementById("warningCheck");
+          warning.remove();
+
+      }
+      addSearchHistory(meal);
+      getMeal(data);
+
+    }
+};
+
+function handleForm(event){
+
+  event.preventDefault();
+
+  if(userInput.value != ""){
+
+      findMeal(userInput.value);
+      userInput.value = "";
+  }
+}
+
+//cocktails 
+function findCocktail(cocktail) {
+
+  'https:www.thecocktaildb.com/api/json/v1/1/search.php?s=' + cocktail;
+
+  fetch(cocktailUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      if(data == "")
+
+      if(!document.getElementById("warningCheck")){ 
+
+        var warning = document.createElement("p");
+        warning.id = "warningCheck";
+        warning.textContent = "Cocktail not found. Please try again."
+        warning.classList.add("alert");
+        warning.classList.add("alert-danger");
+        warning.style.marginTop = "10px";
+        searchForm.appendChild(warning);
+    }
+
+  })
+  else {
+      if(document.getElementById("warningCheck")) {
+          var warning = document.getElementById("warningCheck");
+          warning.remove();
+
+      }
+      addSearchHistory(cocktail);
+      getCocktail(data);
+
+    }
+};
+
+function handleForm(event){
+
+  event.preventDefault();
+
+  if(userInput.value != ""){
+
+      findCocktail(userInput.value);
+      userInput.value = "";
+  }
+}
