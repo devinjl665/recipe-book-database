@@ -16,7 +16,7 @@
       <nav class="navbar is-dark is-spaced" role="navigation" aria-label="main navigation"> <!-- is-fixed-top? -->
         <div class="navbar-start">
         <p class="navbar-item">
-        Welcome to the Recipe Book!
+        The Recipe Book
         </p>
         </div>
         <div class="navbar-end">
@@ -49,13 +49,20 @@
         </div>
       </section>
 
-      <section id="mealsContainer"></section> <!-- This is the container used to display all the meal elements that is made by javascript-->
-     
+        <div class="search-block">
+            <h3>Looking for a meal?</h3>
+            <input type="text" id="mealSearchInput" placeholder="Search by meal name..." />
+            <button id="mealSearchButton">Search</button>
+        </div>
+
+        <section class="container contentDisplay" id="mealsContainer"></section> <!-- This is the container used to display all the meal elements that is made by javascript-->
+
     </main>
 
     <footer>
 
     </footer>
-        <script src="./assets/javascript/mealSearch.js"></script>
+
+    <script src="./assets/javascript/mealSearch.js"></script>
     </body>
  </html>
