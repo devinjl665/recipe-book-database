@@ -22,18 +22,6 @@ body {
     border: 2px solid #000;
 }
 
-#looking-for {
-    width: 20%;
-    height: 450px;
-    padding: 20px;
-    margin-top: 20px;
-    margin-right: 20px;
-    float: right;
-    text-align: center;
-    background-color: gray;
-    border: 2px solid #000;
-}
-
 /* Class Selectors */
 .navbar {
     text-align: center;
