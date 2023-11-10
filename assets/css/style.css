@@ -15,7 +15,7 @@ body {
 
 #container {
     display: inline-block;
-    width: 70%;
+    width: 85%;
     height: 100%;
     margin-top: 50px;
     margin-left: 100px;
@@ -69,6 +69,14 @@ body {
     padding: 15px;
     background-color: black;
     border-radius: 25px;
+}
+
+.recommendedText {
+    margin-top: 75px;
+    margin-left: 50px;
+    text-align: left;
+    text-decoration: underline;
+    color: black;
 }
 
 /* Media Queries */
