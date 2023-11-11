@@ -15,7 +15,6 @@ function displayMealElements(mealObject){ // creates elements for display
 
 
    for(var i = 0; i < mealObject.meals.length; i++){
-        console.log("Meal: " + i);
         // Create tile (BULMA framework) for meal
         var mainTile = document.createElement("div");
 
@@ -178,5 +177,18 @@ mealForm.addEventListener("submit", function(event){ // handle when user searche
     else { // we have input
         // call function to show meals
         findMeals(input.value);
+        addMealHistory(input.value);
+
     }
 });
+
+function addMealHistory(searchedmeal) {
+    var mealHistory = [];
+    var prevSearches = JSON.parse(localStorage.getItem("mealHistory"));
+
+    if (prevSearches !== null) {
+        mealHistory = prevSearches;
+        mealHistory.push(searchedmeal);
+        localStorage.setItem("mealHistory", JSON.stringify(mealHistory));
+    }
+}
