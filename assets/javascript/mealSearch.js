@@ -1,5 +1,7 @@
 var mealForm = document.getElementById("searchForm"); // button used to search for meal
 var mealsContainer = document.getElementById("mealsContainer"); // the container that will hold all the meals
+var mealHistoryText = document.getElementById("mealHistoryText");
+var clearMealHistory = document.getElementById("clearMealHistory");
 
 function displayMealElements(mealObject){ // creates elements for display
     console.log(mealObject);
@@ -210,7 +212,22 @@ function addMealHistory(searchedmeal) {
 
     if (prevSearches !== null) {
         mealHistory = prevSearches;
-        mealHistory.push(searchedmeal);
+        mealHistory.push(" " + searchedmeal);
         localStorage.setItem("mealHistory", JSON.stringify(mealHistory));
-    } 
+    } else {
+        mealHistory.push(" " + searchedmeal);
+        localStorage.setItem("mealHistory", JSON.stringify(mealHistory));
+    }
+    mealHistoryText.textContent = mealHistory;
 }
+
+clearMealHistory.addEventListener("click", function(event){
+    localStorage.clear();
+    mealHistoryText.textContent = "";
+});
+
+function displayMealHistory() {
+    mealHistoryText.textContent = JSON.parse(localStorage.getItem("mealHistory"));
+}
+
+displayMealHistory();

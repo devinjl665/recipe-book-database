@@ -21,6 +21,10 @@ body {
     border: 2px solid #000;
 }
 
+#clearMealHistory, #clearCocktailHistory {
+    margin-bottom: 10px;
+}
+
 /* Class Selectors */
 .navbar {
     text-align: center;
@@ -67,7 +71,7 @@ body {
     color: black;
 }
 
-.myButt{
+.myButt, .mealHistoryDiv, .cocktailHistoryDiv{
     margin-top: 20px;
 }
 
