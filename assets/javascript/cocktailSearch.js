@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var cocktailSearchInput = document.getElementById("cocktailSearchInput");
       var cocktail = cocktailSearchInput.value;
+
+      cocktailSearchInput.value = "";
+
   
       // Make API request using 'fetch' function
       var cocktailUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + cocktail;

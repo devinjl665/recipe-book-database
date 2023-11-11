@@ -178,7 +178,7 @@ mealForm.addEventListener("submit", function(event){ // handle when user searche
         // call function to show meals
         findMeals(input.value);
         addMealHistory(input.value);
-
+        input.value = "";
     }
 });
 
@@ -190,5 +190,5 @@ function addMealHistory(searchedmeal) {
         mealHistory = prevSearches;
         mealHistory.push(searchedmeal);
         localStorage.setItem("mealHistory", JSON.stringify(mealHistory));
-    }
+    } 
 }
