@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Define variables
-    var cocktailSearchButton = document.getElementById("cocktailSearchButton");
+    var cocktailSearchForm = document.getElementById("cocktailSearchForm");
     var cocktailContainer = document.getElementById("container");
     var cocktailTableBody = document.getElementById("cocktailTableBody");
   
     // Add event listener for the search button
-    cocktailSearchButton.addEventListener("click", function () {
+    cocktailSearchForm.addEventListener("submit", function (event) {
+
+      event.preventDefault();
+
       var cocktailSearchInput = document.getElementById("cocktailSearchInput");
       var cocktail = cocktailSearchInput.value;
   
@@ -25,55 +28,52 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to create and display HTML elements based on cocktail data
     function displayCocktailElements(cocktailData) {
       // Clear previous content in the container
-      cocktailContainer.innerHTML = '';
       cocktailTableBody.innerHTML = '';
   
+      console.log(cocktailData);
       // Check if cocktails are found
       if (cocktailData.drinks == null) {
         // Display a message for no results
         cocktailContainer.innerHTML = '<p>No cocktails found.</p>';
       } else {
-        // Loop through each cocktail in the data and create HTML elements
-        for (var i = 0; i < cocktailData.drinks.length; i++) {
-          var cocktail = cocktailData.drinks[i];
-  
-          // Create HTML elements for cocktail details
-          var cocktailName = document.getElementById("cocktailName");
-          cocktailName.textContent = cocktailData.drinks[i].strDrink;
-  
-          var image = document.createElement("img");
-          image.setAttribute("src", cocktail.strDrinkThumb);
-          var imageContainer = document.getElementById("cocktailImageContainer");
-          imageContainer.innerHTML = ''; // Clear previous image
-          imageContainer.appendChild(image);
-  
-          var directions = document.getElementById("directionsCocktail");
-          directions.textContent = cocktail.strInstructions;
-  
-          var cocktailLink = document.getElementById("cocktailLink");
-          cocktailLink.href = cocktail.strVideo;
-  
-          // Log the generated ingredients list to the console
-          console.log(generateIngredientsList(cocktail));
-  
-          // Create HTML elements for ingredients
-          for (var j = 1; j <= 15; j++) {
-            var ingredientKey = 'strIngredient' + j;
-            var measureKey = 'strMeasure' + j;
-  
-            // Check if ingredient and measurement exist
-            if (cocktail[ingredientKey] && cocktail[measureKey]) {
-              var tableRow = document.createElement("tr");
-              var tableCellIngredient = document.createElement("td");
-              tableCellIngredient.textContent = cocktail[ingredientKey];
-              tableRow.appendChild(tableCellIngredient);
-  
-              var tableCellQuantity = document.createElement("td");
-              tableCellQuantity.textContent = cocktail[measureKey];
-              tableRow.appendChild(tableCellQuantity);
-  
-              cocktailTableBody.appendChild(tableRow);
-            }
+        var cocktail = cocktailData.drinks[0];
+
+        // Create HTML elements for cocktail details
+        var cocktailName = document.getElementById("cocktailName");
+        cocktailName.textContent = cocktail.strDrink;
+
+        var image = document.createElement("img");
+        image.setAttribute("src", cocktail.strDrinkThumb);
+        var imageContainer = document.getElementById("cocktailImageContainer");
+        imageContainer.innerHTML = ''; // Clear previous image
+        imageContainer.appendChild(image);
+
+        var directions = document.getElementById("directionsCocktail");
+        directions.textContent = cocktail.strInstructions;
+
+        var cocktailLink = document.getElementById("cocktailLink");
+        cocktailLink.href = cocktail.strVideo;
+
+        // Log the generated ingredients list to the console
+        console.log(generateIngredientsList(cocktail));
+
+        // Create HTML elements for ingredients
+        for (var j = 1; j <= 15; j++) {
+          var ingredientKey = 'strIngredient' + j;
+          var measureKey = 'strMeasure' + j;
+
+          // Check if ingredient and measurement exist
+          if (cocktail[ingredientKey] || cocktail[measureKey]) {
+            var tableRow = document.createElement("tr");
+            var tableCellIngredient = document.createElement("td");
+            tableCellIngredient.textContent = cocktail[ingredientKey];
+            tableRow.appendChild(tableCellIngredient);
+
+            var tableCellQuantity = document.createElement("td");
+            tableCellQuantity.textContent = cocktail[measureKey];
+            tableRow.appendChild(tableCellQuantity);
+
+            cocktailTableBody.appendChild(tableRow);
           }
         }
       }
