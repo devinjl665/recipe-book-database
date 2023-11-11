@@ -35,63 +35,46 @@
   </header>
 
   <main>
-    <!--Cocktail content goes here
-        <h2>Ingredients:</h2>
-
-        <h2>Directions:</h2>
-
-        -->
       <section id="looking-for">  
         <div class="search-block">
-          <form>
+          <form id="cocktailSearchForm">
             <h3>Looking for a cocktail?</h3>
             <input type="text" id="cocktailSearchInput"/>
             <button type="submit" class="searchButton">Search</button>
           </form>
         </div>
       </section>
-    </main>
 
-    <div class="search-block">
-      <h3>Need a Cocktail?</h3>
-      <input type="text" id="cocktailSearchInput" placeholder="Search by liquor..." />
-      <button id="cocktailSearchButton">Search</button>
-    </div>
-
-
-    <section id="container" class="contentDisplay">
-      <div class="tile is-ancestor content is-medium">
-        <div class="tile is-4 is-vertical is-parent">
-          <div class="tile is-child box">
-            <p class="title foodTitle" id="cocktailName"></p>
+      <section id="container" class="contentDisplay">
+        <div class="tile is-ancestor content is-medium">
+          <div class="tile is-4 is-vertical is-parent">
+            <div class="tile is-child box">
+              <p class="title foodTitle" id="cocktailName"></p>
+            </div>
+            <div class="tile is-child box" id="cocktailImageContainer">
+              <!-- Image will be appended here dynamically -->
+            </div>
           </div>
-          <div class="tile is-child box" id="cocktailImageContainer">
-            <!-- Image will be appended here dynamically -->
-          </div>
-        </div>
-        <div class="tile is-parent">
-          <div class="tile is-child box">
-            <table class="table is-bordered is-striped is-hoverable is-narrow content is-small">
-              <thead>
-                <tr>
-                  <th>Ingredient</th>
-                  <th>Quantity</th>
-                </tr>
-              </thead>
-              <tbody id="cocktailTableBody"></tbody>
-            </table>
-            <p class="title">Directions:</p>
-            <p id="directionsCocktail"></p>
-            <p><a id="cocktailLink" target="_blank">Watch Video Here</a></p>
+          <div class="tile is-parent">
+            <div class="tile is-child box">
+              <table class="table is-bordered is-striped is-hoverable is-narrow content is-small">
+                <thead>
+                  <tr>
+                    <th>Ingredient</th>
+                    <th>Quantity</th>
+                  </tr>
+                </thead>
+                <tbody id="cocktailTableBody"></tbody>
+              </table>
+              <p class="title">Directions:</p>
+              <p id="directionsCocktail"></p>
+              <p><a id="cocktailLink" target="_blank">Watch Video Here</a></p>
 
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="container contentDisplay" id="cocktailsContainer"></section>
- 
-</main>
+      </section> 
+  </main>
 
   <footer>
 
