@@ -15,7 +15,6 @@ function displayMealElements(mealObject){ // creates elements for display
 
 
    for(var i = 0; i < mealObject.meals.length; i++){
-        console.log("Meal: " + i);
         // Create tile (BULMA framework) for meal
         var mainTile = document.createElement("div");
 
