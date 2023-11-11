@@ -175,5 +175,18 @@ mealButton.addEventListener("click", function(){ // handle when user searches fo
     else { // we have input
         // call function to show meals
         findMeals(input.value);
+        addMealHistory(input.value);
+
     }
 });
+
+function addMealHistory(searchedmeal) {
+    var mealHistory = [];
+    var prevSearches = JSON.parse(localStorage.getItem("mealHistory"));
+
+    if (prevSearches !== null) {
+        mealHistory = prevSearches;
+        mealHistory.push(searchedmeal);
+        localStorage.setItem("mealHistory", JSON.stringify(mealHistory));
+    }
+}
