@@ -142,6 +142,20 @@ function displayMealElements(mealObject){ // creates elements for display
     } // end for loop
 
 }
+
+function mealNotFoundText(){
+    var messageBox = document.getElementById("searchMessageBox");
+    messageBox.innerHTML = "";
+    var message = document.createElement("h1");
+    message.setAttribute("id", "searchContentEmpty");
+    message.textContent = "Nothing was Found!";
+    message.classList.add("title", "is-2");
+    message.style.textAlign = "center";
+    message.style.marginBottom = "20px";
+    message.style.color = "red";
+    messageBox.append(message);
+}
+
 function findMeals(meal) { // finds meal in API
     console.log("Searching for " + meal);
 
@@ -156,11 +170,19 @@ function findMeals(meal) { // finds meal in API
         if(data.meals == null){ // means nothing was found in API database
             // create error message
             console.log("MEAL NOT FOUND");
+
+            // Display message for if meal not found
+            mealNotFoundText();
         }
         else {
             // lets start working on creating display for meals
             console.log("Meals found!");
             displayMealElements(data); // lets display the meals
+
+            if(document.getElementById("searchContentEmpty")){ // means previous search wasn't found so remove content
+                var messageBox = document.getElementById("searchContentEmpty");
+                messageBox.innerHTML = "";
+            }
         }
     });
 }

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Define variables
     var cocktailSearchForm = document.getElementById("cocktailSearchForm");
-    var cocktailContainer = document.getElementById("container");
+    var cocktailContainer = document.getElementById("cocktailContainer");
     var cocktailTableBody = document.getElementById("cocktailTableBody");
   
     // Add event listener for the search button
@@ -23,8 +23,20 @@ document.addEventListener('DOMContentLoaded', function () {
           return response.json();
         })
         .then(function (data) {
-          // Handle API response and update HTML
-          displayCocktailElements(data);
+          // see if not found
+          if(data.drinks == null){
+            // Display message for if meal not found
+            cocktailNotFoundText();
+          }
+          else {
+            // Handle API response and update HTML
+            displayCocktailElements(data);
+
+            if(document.getElementById("searchContentEmpty")){ // means previous search wasn't found so remove content
+              var messageBox = document.getElementById("searchContentEmpty");
+              messageBox.innerHTML = "";
+            }
+          }
         });
     });
   
@@ -101,5 +113,19 @@ document.addEventListener('DOMContentLoaded', function () {
   
       return ingredientsList;
     }
+
+    function cocktailNotFoundText(){
+      var messageBox = document.getElementById("searchMessageBox");
+      messageBox.innerHTML = "";
+      var message = document.createElement("h1");
+      message.setAttribute("id", "searchContentEmpty");
+      message.textContent = "Nothing was Found!";
+      message.classList.add("title", "is-2");
+      message.style.textAlign = "center";
+      message.style.marginBottom = "20px";
+      message.style.color = "red";
+      messageBox.append(message);
+  }
+
   });
   

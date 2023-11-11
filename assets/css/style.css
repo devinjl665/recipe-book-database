@@ -10,11 +10,6 @@ body {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
 }
 
-h2 {
-    text-align: center;
-}
-
-
 /* Id Selectors */ 
 
 #container {
@@ -45,9 +40,11 @@ h2 {
 }
 
 .search-block {
-    margin: 10%;
+    margin: 55px;
+    width: 80%;
     padding: 15px;
-    background-color: #7077aa;
+    height: auto;
+    background-color: #9c9da4;
     border: 2px solid #000;
     border-radius: 25px;
 }
@@ -73,4 +70,7 @@ h2 {
 .myButt{
     margin-top: 20px;
 }
-/* Media Queries */
+
+.searchHeader {
+    text-align: center;
+}
