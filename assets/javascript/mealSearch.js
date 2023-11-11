@@ -1,4 +1,4 @@
-var mealButton = document.getElementById("mealSearchButton"); // button used to search for meal
+var mealForm = document.getElementById("searchForm"); // button used to search for meal
 var mealsContainer = document.getElementById("mealsContainer"); // the container that will hold all the meals
 
 function displayMealElements(mealObject){ // creates elements for display
@@ -165,7 +165,10 @@ function findMeals(meal) { // finds meal in API
     });
 }
 
-mealButton.addEventListener("click", function(){ // handle when user searches for meal
+mealForm.addEventListener("submit", function(event){ // handle when user searches for meal
+
+    event.preventDefault();
+
     var input = document.getElementById("mealSearchInput");
     
     if(input.value == ""){ // means user needs to type something in
