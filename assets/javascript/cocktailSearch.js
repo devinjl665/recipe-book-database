@@ -30,7 +30,6 @@ cocktailSearchForm.addEventListener("submit", function (event) {
       else {
         // Handle API response and update HTML
         displayCocktailElements(data);
-        addCocktailHistory(cocktailSearchInput.value);
 
         if(document.getElementById("searchContentEmpty")){ // means previous search wasn't found so remove content
           var messageBox = document.getElementById("searchContentEmpty");
@@ -38,6 +37,7 @@ cocktailSearchForm.addEventListener("submit", function (event) {
         }
       }
     });
+    addCocktailHistory(cocktailSearchInput.value);
     cocktailSearchInput.value = "";
 });
 
