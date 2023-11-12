@@ -162,7 +162,7 @@ function findMeals(meal) { // finds meal in API
     console.log("Searching for " + meal);
 
     // Create API URL
-    var mealUrl = 'https:www.themealdb.com/api/json/v1/1/search.php?s=' + meal; // url to the database of meals 
+    var mealUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + meal; // url to the database of meals 
 
     fetch(mealUrl) // send out request and fetch should return an object (the meal object)
     .then(function (response) {
