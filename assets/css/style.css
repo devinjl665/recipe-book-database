@@ -51,6 +51,7 @@ body {
     background-color: #9c9da4;
     border: 2px solid #000;
     border-radius: 25px;
+    margin-top: 100px;
 }
 
 .foodTitle { /* Centers title of Meal/Drink Name */
