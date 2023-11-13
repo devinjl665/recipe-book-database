@@ -6,6 +6,8 @@ var clearMealHistory = document.getElementById("clearMealHistory");
 function displayMealElements(mealObject){ // creates elements for display
     console.log(mealObject);
 
+    mealsContainer.style.display = "block";
+
     if(document.getElementById("mealsListElement")){ // if this exists, it means user has searched before
         // therefore I don't want to display multiple things
         document.getElementById("mealsListElement").remove(); // so I will remove all information
