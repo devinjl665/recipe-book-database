@@ -8,7 +8,7 @@ var cocktailSearchInput = document.getElementById("cocktailSearchInput");
 
 function displayRecommenedMeal(meal){ // takes in a meal
 
-  var mealUrl = 'https:www.themealdb.com/api/json/v1/1/search.php?s=' + meal; // the database of meals 
+  var mealUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + meal; // the database of meals 
 
   fetch(mealUrl) // send out request and fetch should return an object (the meal object)
     .then(function (response) {
@@ -75,7 +75,7 @@ function displayRecommenedMeal(meal){ // takes in a meal
 
 function displayRecommenedCocktails(cocktail){ // takes in a cocktail
 
-  var cocktailUrl = 'https:www.thecocktaildb.com/api/json/v1/1/search.php?s=' + cocktail; // the database of cocktails (later put input inside html link after '?s=')
+  var cocktailUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + cocktail; // the database of cocktails (later put input inside html link after '?s=')
 
   fetch(cocktailUrl) // send out request and fetch should return an object (the meal object)
   .then(function (response) {
