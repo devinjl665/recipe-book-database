@@ -30,28 +30,31 @@ https://www.themealdb.com/api.php
 
 https://bulma.io/
 
+
 ## User Story
 
-
+As a team of software developers we want to create a website that displays recipes for many different meals and cocktails. The website will have multiple pages that the user will be able to navigate, they will also be able to search recipes and have that search history saved locally.
 
 ## Acceptance Criteria
 
-Use a CSS framework other than Bootstrap.
+It is done when:
+
+We use a CSS framework other than Bootstrap.
 
 
-Be deployed to GitHub Pages.
+The site deployed to GitHub Pages.
 
 
-Be interactive (i.e., accept and respond to user input).
+The site interactive (i.e., accept and respond to user input).
 
 
-Use at least two server-side APIs.
+We use at least two server-side APIs.
 
 
-Use client-side storage to store persistent data.
+We use client-side storage to store persistent data.
 
 
-Be responsive.
+Is responsive.
 
 
-Have a polished UI.
+Has a polished UI.
