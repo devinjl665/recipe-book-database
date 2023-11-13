@@ -1,6 +1,6 @@
 // Define variables
 var cocktailSearchForm = document.getElementById("cocktailSearchForm");
-var cocktailContainer = document.getElementById("container");
+var cocktailContainer = document.getElementById("cocktailContainer");
 var cocktailTableBody = document.getElementById("cocktailTableBody");
 var cocktailHistoryText = document.getElementById("cocktailHistoryText");
 var clearCocktailHistory = document.getElementById("clearCocktailHistory");
@@ -45,6 +45,8 @@ cocktailSearchForm.addEventListener("submit", function (event) {
 function displayCocktailElements(cocktailData) {
   // Clear previous content in the container
   cocktailTableBody.innerHTML = '';
+
+  cocktailContainer.style.display = "block";
 
   console.log(cocktailData);
   // Check if cocktails are found
