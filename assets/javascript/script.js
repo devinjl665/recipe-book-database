@@ -138,6 +138,24 @@ function displayRecommenedCocktails(cocktail){ // takes in a cocktail
 
 }
 
+// Adds or removes is-active class based on current status to allow burger to work on mobile as intended
+function burgerFunction() {
+  var burgerBtn = document.getElementById("burgerBtn");
+  var navMenu = document.getElementById("navMenu");
+
+  if (!burgerBtn.classList.contains('is-active')) {
+    burgerBtn.classList.add("is-active");
+  } else {
+    burgerBtn.classList.remove("is-active");
+  }
+
+  if (!navMenu.classList.contains('is-active')) {
+    navMenu.classList.add("is-active");
+  } else {
+    navMenu.classList.remove("is-active");
+  }
+}
+
 recommendedMealContainer.style.display = "block";
 recommendedCocktailContainer.style.display = "block";
 
