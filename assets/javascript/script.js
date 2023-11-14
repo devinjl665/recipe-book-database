@@ -2,9 +2,9 @@
 // ********* Get HTML ID's later
 var recommendedMeal = 'Arrabiata'; // change accordinly to what you recommened
 var recommendedCocktail = 'Old Fashioned'; // change accordinly to what you recommened
-var searchForm = document.getElementById("searchForm"); // form for searches
-var mealSearchInput = document.getElementById("mealSearchInput");
-var cocktailSearchInput = document.getElementById("cocktailSearchInput");
+
+var recommendedMealContainer = document.getElementById("recommendedMealContainer");
+var recommendedCocktailContainer = document.getElementById("recommendedCocktailContainer");
 
 function displayRecommenedMeal(meal){ // takes in a meal
 
@@ -137,6 +137,9 @@ function displayRecommenedCocktails(cocktail){ // takes in a cocktail
   });
 
 }
+
+recommendedMealContainer.style.display = "block";
+recommendedCocktailContainer.style.display = "block";
 
 displayRecommenedMeal(recommendedMeal);
 displayRecommenedCocktails(recommendedCocktail);
