@@ -8,7 +8,7 @@ Need to find new recipes to curb your inner foodie? Want to pair a drink with it
 
 ## Demo
 
-
+![the-recipe-book-gif](https://github.com/devinjl665/recipe-book-database/assets/142193870/7f22f85f-eba4-443c-b138-3a57c4f45eaf)
 
 ## Site Link
 

@@ -80,3 +80,7 @@ body {
 .searchHeader {
     text-align: center;
 }
+
+.h2Header {
+    padding-bottom: 25px;
+}
